@@ -1,0 +1,11 @@
+name: Curl
+on:
+  workflow_dispatch:
+jobs:
+  curljob:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: Curl
+        run: |
+          curl -v --retry 5 -X POST -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" https://api.github.com/repos/ricardojfc-org/mirrored/pulls/PULL_NUMBER/requested_reviewers -d '{"team_reviewers":["team01"]}'
