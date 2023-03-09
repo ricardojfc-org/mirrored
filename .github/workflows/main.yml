@@ -1,4 +1,4 @@
-name: Curl
+name: Add a team as reviewer to a PR with curl
 on:
   workflow_dispatch:
 jobs:
